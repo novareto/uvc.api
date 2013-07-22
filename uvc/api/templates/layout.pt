@@ -7,7 +7,7 @@
   i18n:domain="uvc.fiveexample">
   <body>
     <metal:main fill-slot="main">
-      <div tal:replace="view/content" />
+      <div tal:replace="structure view/content" />
     </metal:main>
   </body>
 </html>
