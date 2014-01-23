@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 # Copyright (c) 2007-2011 NovaReto GmbH
-# cklinger@novareto.de 
+# cklinger@novareto.de
 
-from uvc.api import log 
+from uvc.api import log
 from zope import interface
 
 try:
@@ -24,10 +24,11 @@ if GROK:
         return request.principal
 
 else:
-    from five.grok import View 
+    from five.grok import View
     from five import grok
     from zope.publisher.publish import mapply
     from zeam.form.plone import Form
+    from zeam.form.base import Fields, action
     from zope.component import getMultiAdapter
     from AccessControl.interfaces import IUser as IPrincipal
     from grokcore.layout import Layout, Page
@@ -39,6 +40,6 @@ else:
         grok.context(interface.Interface)
 
 
-    def get_princiapl(context, request):
+    def get_principal(context, request):
         portal_state = getMultiAdapter((context, request), name="plone_portal_state")
         return portal_state.member().getUser()
