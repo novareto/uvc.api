@@ -11,7 +11,7 @@ try:
 except:
     GROK = False
 
-log('Running nva.tabsuche in GROK Environment --> %s' % GROK)
+log('Running nva.api in GROK Environment --> %s' % GROK)
 
 
 if GROK:
@@ -32,6 +32,7 @@ else:
     from zope.component import getMultiAdapter
     from AccessControl.interfaces import IUser as IPrincipal
     from grokcore.layout import Layout, Page
+    from megrok import pagetemplate as pt
 
     grok.templatedir('templates')
 
@@ -43,3 +44,11 @@ else:
     def get_principal(context, request):
         portal_state = getMultiAdapter((context, request), name="plone_portal_state")
         return portal_state.member().getUser()
+
+    class Form(Form):
+        """ """
+        grok.baseclass()
+
+    class FormTemplate(pt.PageTemplate):
+        pt.view(Form)
+
