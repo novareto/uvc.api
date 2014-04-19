@@ -33,6 +33,7 @@ else:
     from AccessControl.interfaces import IUser as IPrincipal
     from grokcore.layout import Layout, Page
     from megrok import pagetemplate as pt
+    from zope.browserpage.viewpagetemplatefile import ViewPageTemplateFile
 
     grok.templatedir('templates')
 
@@ -52,3 +53,5 @@ else:
     class FormTemplate(pt.PageTemplate):
         pt.view(Form)
 
+    class FormMacros(grok.View):
+        grok.context(interface.Interface)
