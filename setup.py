@@ -26,7 +26,9 @@ setup(name='uvc.api',
           # -*- Extra requirements: -*-
       ],
       extras_require={
-                  'plone': ['five.grok', 'zeam.form.plone', 'grokcore.layout'],
+          'grok': ['grok'],
+          'plone': ['uvc.plone'],
+          'uvclight': ['uvclight'],
       },
       entry_points={
          'z3c.autoinclude.plugin': 'target=uvcsite', 
