@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 #
 # uvc.api documentation build configuration file, created by
-# sphinx-quickstart on Tue Jun 10 13:43:26 2014.
+# sphinx-quickstart on Tue Jun 10 13:52:48 2014.
 #
 # This file is execfile()d with the current directory set to its
 # containing dir.
@@ -32,6 +32,7 @@ extensions = [
     'sphinx.ext.autodoc',
     'sphinx.ext.doctest',
     'sphinx.ext.todo',
+    'sphinxcontrib.zopeext.autointerface',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -71,7 +72,7 @@ release = '1.0'
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
-exclude_patterns = []
+exclude_patterns = ['_build']
 
 # The reST default role (used for this markup: `text`) to use for all
 # documents.
