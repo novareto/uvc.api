@@ -54,3 +54,4 @@ ENV = get_technology()
 
 from . import api
 assert verifyObject(UVCAPI, api)
+from .api import *

@@ -17,6 +17,18 @@ class UVCBrowserComponents(Interface):
     Page = Attribute(
         "View rendered inside a Layout component.")
 
+    TablePage = Attribute(
+        "Table rendered inside a Layout component.")
+
+    Menu = Attribute(
+        "Menu component managing menu items.")
+
+    SubMenu = Attribute(
+        "Menu component subordoned to an other menu component.")
+
+    MenuItem = Attribute(
+        "Menu items component, subordoned to a menu or submenu.")
+
 
 class UVCSecurity(Interface):
 
