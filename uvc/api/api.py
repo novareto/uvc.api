@@ -3,6 +3,7 @@
 # cklinger@novareto.de
 
 from zope.interface.declarations import moduleProvides
+from grokcore.viewlet import viewletmanager, view
 from grokcore.component import baseclass, context, name
 from grokcore.component import order, title, implements, provides
 from grokcore.security import require
@@ -22,7 +23,7 @@ if ENV is GROK:
 
 
 elif ENV is PLONE:
-    from uvc.plone.api import Layout, Form, View, Page
+    from uvc.plone.api import Layout, Form, View, Page, Viewlet
     from uvc.plone.api import get_principal, IPrincipal
     from five.grok import templatedir
     Menu = MenuItem = SubMenu = TablePage = None
