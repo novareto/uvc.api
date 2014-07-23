@@ -23,6 +23,10 @@ setup(name='uvc.api',
       zip_safe=False,
       install_requires=[
           'setuptools',
+          'grokcore.viewlet',
+          'grokcore.component',
+          'grokcore.security',
+          'zope.interface',
           # -*- Extra requirements: -*-
       ],
       extras_require={
