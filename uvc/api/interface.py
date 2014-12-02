@@ -7,7 +7,7 @@ class UVCBrowserComponents(Interface):
 
     Layout = Attribute(
         "Layout component to render consistent HTML.")
-    
+
     Form = Attribute(
         "Form component.")
 

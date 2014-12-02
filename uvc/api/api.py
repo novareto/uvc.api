@@ -33,7 +33,8 @@ elif ENV is UVCLIGHT:
     from uvclight import Fields, action, DisplayForm, AddForm, EditForm, Layout, Form, Page, View
     from uvclight.utils import current_principal as get_principal
     from zope.security.interfaces import IPrincipal
-    Menu = MenuItem = SubMenu = TablePage = None
+    from uvclight import Menu, MenuItem, SubMenu, TablePage
+    from uvclight import menu
 
 else:
     raise NotImplementedError
