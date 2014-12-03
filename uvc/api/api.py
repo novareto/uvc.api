@@ -35,6 +35,7 @@ elif ENV is UVCLIGHT:
     from zope.security.interfaces import IPrincipal
     from uvclight import Menu, MenuItem, SubMenu, TablePage
     from uvclight import menu
+    from cromlech.browser import slot as viewletmanager
 
 else:
     raise NotImplementedError
