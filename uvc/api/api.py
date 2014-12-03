@@ -30,7 +30,7 @@ elif ENV is PLONE:
 
 
 elif ENV is UVCLIGHT:
-    from uvclight import Fields, action, DisplayForm, AddForm, EditForm, Layout, Form, Page, View
+    from uvclight import Viewlet, Fields, action, DisplayForm, AddForm, EditForm, Layout, Form, Page, View
     from uvclight.utils import current_principal as get_principal
     from zope.security.interfaces import IPrincipal
     from uvclight import Menu, MenuItem, SubMenu, TablePage
