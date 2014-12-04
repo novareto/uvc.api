@@ -6,6 +6,7 @@ from zope.interface.declarations import moduleProvides
 from grokcore.viewlet import viewletmanager, view
 from grokcore.component import baseclass, context, name, description
 from grokcore.component import order, title, implements, provides, subscribe
+from grokcore.component import GlobalUtility
 from grokcore.security import require
 
 from . import log, ENV, PLONE, GROK, UVCLIGHT
