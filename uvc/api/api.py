@@ -14,10 +14,13 @@ from .interface import UVCAPI
 
 
 if ENV is GROK:
-    from uvc.layout import Layout, TablePage, Page, View
+    from grokcore.view import View
+    from grokcore.layout import Layout, Page
+    from megrok.z3ctable import TablePage
     from uvc.layout import Menu, MenuItem, SubMenu
     from uvc.layout.forms import Form
     from zope.security.interfaces import IPrincipal
+    from zeam.form.base import Fields, action
 
     def get_principal(context, request):
         return request.principal
