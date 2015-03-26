@@ -4,6 +4,7 @@
 
       <include zcml:condition="installed grok" package="grok" />
       <include zcml:condition="installed uvc.plone" package="uvc.plone" />
+
       <grok:grok package="." />
 
 </configure>

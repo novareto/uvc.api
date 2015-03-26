@@ -20,7 +20,7 @@ if ENV is GROK:
     from uvc.layout import Menu, MenuItem, SubMenu
     from uvc.layout.forms import Form
     from zope.security.interfaces import IPrincipal
-    from zeam.form.base import Fields, action
+    from zeam.form.base import Fields, action, Action, SUCCESS
 
     def get_principal(context, request):
         return request.principal
@@ -28,7 +28,8 @@ if ENV is GROK:
 
 elif ENV is PLONE:
     from uvc.plone.api import Layout, Form, View, Page, Viewlet, Fields, action
-    from uvc.plone.api import get_principal, IPrincipal
+    from uvc.plone.api import Action, SUCCESS, FAILURE, ComposedForm, SubForm
+    from uvc.plone.api import get_principal, IPrincipal, Actions
     from five.grok import templatedir
     Menu = MenuItem = SubMenu = TablePage = None
 
