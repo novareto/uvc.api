@@ -30,7 +30,7 @@ setup(name='uvc.api',
           # -*- Extra requirements: -*-
       ],
       extras_require={
-          'grok': ['grok'],
+          'grok': ['grok', 'grokcore.chameleon'],
           'plone': ['uvc.plone'],
           'uvclight': ['uvclight'],
       },
