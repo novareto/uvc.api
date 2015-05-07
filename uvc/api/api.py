@@ -2,18 +2,21 @@
 # Copyright (c) 2007-2011 NovaReto GmbH
 # cklinger@novareto.de
 
-from zope.interface.declarations import moduleProvides
-from grokcore.viewlet import viewletmanager, view
-from grokcore.component import baseclass, context, name, description
-from grokcore.component import order, title, implements, provides, subscribe
-from grokcore.component import GlobalUtility
-from grokcore.security import require
-
 from . import log, ENV, PLONE, GROK, UVCLIGHT
 from .interface import UVCAPI
 
+from zope.interface.declarations import moduleProvides
+from grokcore.component import (
+    baseclass, context, name, description,
+    order, title, implements, provides, subscribe,
+    GlobalUtility)
+
 
 if ENV is GROK:
+    from os.pa
+    from grokcore.security import require
+    from grokcore.chameleon.components import ChameleonPageTemplateFile
+    from grokcore.viewlet import viewletmanager, view
     from grokcore.view import View
     from grokcore.layout import Layout, Page
     from megrok.z3ctable import TablePage
@@ -25,8 +28,13 @@ if ENV is GROK:
     def get_principal(context, request):
         return request.principal
 
+    def get_template(filename, dir):
+        return ChameleonPageTemplateFile(filename, dir)
+
 
 elif ENV is PLONE:
+    from grokcore.security import require
+    from grokcore.viewlet import viewletmanager, view
     from uvc.plone.api import Layout, Form, View, Page, Viewlet, Fields, action
     from uvc.plone.api import Action, SUCCESS, FAILURE, ComposedForm, SubForm
     from uvc.plone.api import get_principal, IPrincipal, Actions
@@ -35,6 +43,11 @@ elif ENV is PLONE:
 
 
 elif ENV is UVCLIGHT:
+    try:
+        from ul.auth import require
+    except ImportError:
+        pass
+    from uvclight.directives import view, viewletmanager
     from uvclight import Viewlet, Fields, action, DisplayForm, AddForm, EditForm, Layout, Form, Page, View
     from uvclight.utils import current_principal as get_principal
     from zope.security.interfaces import IPrincipal
