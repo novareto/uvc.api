@@ -52,6 +52,6 @@ def get_technology():
 
 ENV = get_technology()
 
-from . import api
+from uvc.api import api
 assert verifyObject(UVCAPI, api)
 from .api import *

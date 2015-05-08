@@ -13,7 +13,6 @@ from grokcore.component import (
 
 
 if ENV is GROK:
-    from os.pa
     from grokcore.security import require
     from grokcore.chameleon.components import ChameleonPageTemplateFile
     from grokcore.viewlet import viewletmanager, view
