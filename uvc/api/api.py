@@ -27,7 +27,7 @@ if ENV is GROK:
     def get_principal(context, request):
         return request.principal
 
-    def get_template(filename, dir):
+    def get_template(dir, filename):
         return ChameleonPageTemplateFile(filename, dir)
 
 
