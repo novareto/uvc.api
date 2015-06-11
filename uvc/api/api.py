@@ -47,11 +47,12 @@ elif ENV is UVCLIGHT:
     except ImportError:
         pass
     from uvclight.directives import view, viewletmanager
-    from uvclight import Viewlet, Fields, action, DisplayForm, AddForm, EditForm, Layout, Form, Page, View
+    from uvclight import menu, get_template
+    from uvclight import Layout, Viewlet, Page, View
+    from uvclight import action, Fields, Form, DisplayForm, AddForm, EditForm
+    from uvclight import Menu, MenuItem, SubMenu, TablePage
     from uvclight.utils import current_principal as get_principal
     from zope.security.interfaces import IPrincipal
-    from uvclight import Menu, MenuItem, SubMenu, TablePage
-    from uvclight import menu
     from cromlech.browser import slot as viewletmanager
 
 else:
