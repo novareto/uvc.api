@@ -46,6 +46,7 @@ elif ENV is PLONE:
     from uvc.plone.api import Layout, Form, View, Page, Viewlet, Fields, action
     from uvc.plone.api import Action, SUCCESS, FAILURE, ComposedForm, SubForm
     from uvc.plone.api import get_principal, IPrincipal, Actions
+    from uvc.plone.api import ViewletManager 
     from five.grok import templatedir
     Menu = MenuItem = SubMenu = TablePage = None
 
