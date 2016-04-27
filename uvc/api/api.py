@@ -2,6 +2,7 @@
 # Copyright (c) 2007-2011 NovaReto GmbH
 # cklinger@novareto.de
 
+from os import path
 from . import log, ENV, PLONE, GROK, UVCLIGHT
 from .interface import UVCAPI
 
@@ -29,7 +30,8 @@ if ENV is GROK:
     def get_principal(context, request):
         return request.principal
 
-    def get_template(dir, filename):
+    def get_template(filename, dir):
+        dir = path.join(path.dirname(dir), 'templates')
         return ChameleonPageTemplateFile(filename, dir)
 
     class Page(ViewSupportMixin, BasePage):
