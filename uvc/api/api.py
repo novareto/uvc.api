@@ -24,6 +24,7 @@ if ENV is GROK:
     from uvc.layout import Menu, MenuItem, SubMenu
     from uvc.layout.forms import Form
     from zope.security.interfaces import IPrincipal
+    from zope.session.interfaces import ISession
     from zeam.form.base import Fields, action, Action, SUCCESS
     from grok.components import ViewSupportMixin
 
@@ -45,10 +46,11 @@ if ENV is GROK:
 elif ENV is PLONE:
     from grokcore.security import require
     from grokcore.viewlet import viewletmanager, view
+    from zope.session.interfaces import ISession
     from uvc.plone.api import Layout, Form, View, Page, Viewlet, Fields, action
     from uvc.plone.api import Action, SUCCESS, FAILURE, ComposedForm, SubForm
     from uvc.plone.api import get_principal, IPrincipal, Actions
-    from uvc.plone.api import ViewletManager 
+    from uvc.plone.api import ViewletManager
     from five.grok import templatedir
     Menu = MenuItem = SubMenu = TablePage = None
 
@@ -64,6 +66,7 @@ elif ENV is UVCLIGHT:
     from uvclight import action, Fields, Form, DisplayForm, AddForm, EditForm
     from uvclight import Menu, MenuItem, SubMenu, TablePage
     from uvclight.utils import current_principal as get_principal
+    from cromlech.browser.interfaces import ISession
     from zope.security.interfaces import IPrincipal
     from cromlech.browser import slot as viewletmanager
 
