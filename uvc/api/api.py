@@ -21,12 +21,18 @@ if ENV in (GROK, GROK3K):
     from grokcore.layout import Layout, Page
     from grokcore.layout import Page as BasePage
     from megrok.z3ctable import TablePage
-    from uvc.layout import Menu, MenuItem, SubMenu
-    from uvc.layout.forms import Form
     from zope.security.interfaces import IPrincipal
     from zope.session.interfaces import ISession
     from zeam.form.base import Fields, action, Action, SUCCESS
     from grok.components import ViewSupportMixin
+
+    if ENV is GROK:
+        from uvc.layout import Menu, MenuItem, SubMenu
+        from uvc.layout.forms import Form
+    else:
+        from uvc.menus.components import Menu, MenuItem
+        from uvcsite.browser.layout.slots.components import SubMenu
+        from uvcsite.browser import Form
 
     def get_principal(context, request):
         return request.principal
