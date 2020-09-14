@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import logging
+import sys
 from grokcore.component import zcml
 from zope.interface.verify import verifyObject
 from .interface import UVCAPI
@@ -22,6 +23,7 @@ zcml.skip_tests = skip_tests_path
 GROK = object()
 UVCLIGHT = object()
 PLONE = object()
+GROK3K = object()
 
 
 def get_technology():
@@ -35,7 +37,10 @@ def get_technology():
 
     try:
         import grok
-        ENV = GROK
+        if sys.version_info >= (3, 5):
+            ENV = GROK3K
+        else:
+            ENV = GROK
         return ENV
     except ImportError:
         pass

@@ -3,7 +3,7 @@
 # cklinger@novareto.de
 
 from os import path
-from . import log, ENV, PLONE, GROK, UVCLIGHT
+from . import log, ENV, PLONE, GROK, UVCLIGHT, GROK3K
 from .interface import UVCAPI
 
 from zope.interface.declarations import moduleProvides
@@ -13,7 +13,7 @@ from grokcore.component import (
     GlobalUtility)
 
 
-if ENV is GROK:
+if ENV in (GROK, GROK3K):
     from grokcore.security import require
     from grokcore.chameleon.components import ChameleonPageTemplateFile
     from grokcore.viewlet import viewletmanager, view
